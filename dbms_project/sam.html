@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Card Design</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 260px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background-color: #ff758c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #ff4d6d;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UI Card Design</h1>
+        <div class="card-container">
+            <div class="welcome-container">
+                <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+                <button onclick="window.location.href='add_vehicle.php'">Add Vehicle</button>
+                <button onclick="window.location.href='view_vehicles.php'">Vehicle Details</button>
+                <!-- Your existing button -->
+                <button onclick="window.location.href='charging_stations.php';">Find Nearest Charging Stations</button>
+            </div>
+            <p>Thank you for registering. We're excited to have you on board!</p>
+            <a href="logout.php" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
